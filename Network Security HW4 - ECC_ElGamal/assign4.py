@@ -229,6 +229,7 @@ if __name__ == '__main__':
     show_encryption()
     show_decryption()
 
+    
 # ----------------------------------------- <EC-ElGamal Encryption> -----------------------------------------------
 # Plaintext M = 110BA66CC954BE963A7831D9D9A3D1D39B8EC3
 # Pa_x = 027AB13D6D69847A9CCE9A84E5DB1BDDD87F11F38C   
@@ -267,5 +268,6 @@ if __name__ == '__main__':
 # Pb = 02A9FC4BBA3F7B3D53D3CEF8D0D9F0165882541CE2
 # na = 246FF426810C46F504EE9F2FC69BFA35B02BA373
 # Plaintext = 668E9E1D01A306A1AB76C9949A973248E3AB53 
+
 
 
