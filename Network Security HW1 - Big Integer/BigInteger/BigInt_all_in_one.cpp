@@ -342,46 +342,46 @@ BigInt operator%(const BigInt &a, BigInt &b) {
 	return temp;
 }
 
-BigInt &operator^=(BigInt & a,const BigInt & b){
+BigInt &operator^=(BigInt& a, const BigInt& b) {
 	BigInt Exponent, Base(a);
 	Exponent = b;
 	a = 1;
-	while(!Null(Exponent)){
-		if(Exponent[0] & 1)
-			a *= Base;
+	while (!Null(Exponent)) {
+		if (Exponent[0] & 1) a *= Base;
 		Base *= Base;
 		divide_by_2(Exponent);
 	}
 	return a;
 }
-BigInt operator^(BigInt & a,BigInt & b){
+BigInt operator^(BigInt& a, BigInt& b) {
 	BigInt temp(a);
 	temp ^= b;
 	return temp;
 }
 
-void divide_by_2(BigInt & a){
+void divide_by_2(BigInt & a) {
 	int add = 0;
-	for (int i = a.digits.size() - 1; i >= 0;i--){
+	for (int i = a.digits.size() - 1; i >= 0; i--) {
 		int digit = (a.digits[i] >> 1) + add;
 		add = ((a.digits[i] & 1) * 5);
 		a.digits[i] = digit;
 	}
-	while(a.digits.size() > 1 && !a.digits.back())
+	while (a.digits.size() > 1 && !a.digits.back()) {
 		a.digits.pop_back();
+	}
 }
 
-BigInt sqrt(BigInt & a){
+BigInt sqrt(BigInt& a) {
 	BigInt left(1), right(a), v(1), mid, prod;
 	divide_by_2(right);
-	while(left <= right){
+	while (left <= right) {
 		mid += left;
 		mid += right;
 		divide_by_2(mid);
 		prod = (mid * mid);
-		if(prod <= a){
+		if (prod <= a) {
 			v = mid;
-			++mid;
+			mid++;
 			left = mid;
 		}
 		else{
@@ -393,25 +393,26 @@ BigInt sqrt(BigInt & a){
 	return v;
 }
 
-BigInt NthCatalan(int n){
-	BigInt a(1),b;
-	for (int i = 2; i <= n;i++)
+BigInt NthCatalan(int n) {
+	BigInt a(1), b;
+	for (int i = 2; i <= n; i++) {
 		a *= i;
+	}
 	b = a;
-	for (int i = n + 1; i <= 2 * n;i++)
+	for (int i = n + 1; i <= 2 * n; i++) {
 		b *= i;
+	}
 	a *= a;
 	a *= (n + 1);
 	b /= a;
 	return b;
 }
 
-BigInt NthFibonacci(int n){
+BigInt NthFibonacci(int n) {
 	BigInt a(1), b(1), c;
-	if(!n)
-		return c;
+	if (!n) return c;
 	n--;
-	while(n--){
+	while (n-- > 0) {
 		c = a + b;
 		b = a;
 		a = c;
@@ -419,10 +420,11 @@ BigInt NthFibonacci(int n){
 	return b;
 }
 
-BigInt Factorial(int n){
+BigInt Factorial(int n) {
 	BigInt f(1);
-	for (int i = 2; i <= n;i++)
+	for (int i = 2; i <= n; i++) {
 		f *= i;
+	}
 	return f;
 }
 
@@ -460,28 +462,27 @@ BigInt big_random(size_t num_digits = 0) {
     while (big_rand.digits.size() < num_digits) {
         big_rand.digits += std::to_string(rand_generator());
     }
-    if (big_rand.digits.size() != num_digits) {
-        big_rand.digits.erase(num_digits);   // erase extra digits
+    if (big_rand.digits.size() != num_digits) { 
+        big_rand.digits.erase(num_digits);      // erase extra digits
     }
-
     return big_rand;
 }
 
-istream &operator>>(istream &in,BigInt&a){
+istream &operator>>(istream &in,BigInt&a) {
 	string s;
 	in >> s;
 	int n = s.size();
-	for (int i = n - 1; i >= 0;i--){
-		if(!isdigit(s[i]))
-			throw("INVALID NUMBER");
+	for (int i = n - 1; i >= 0; i--) {
+		if (!isdigit(s[i])) throw("INVALID NUMBER");
 		a.digits[n - i - 1] = s[i];
 	}
 	return in;
 }
 
-ostream &operator<<(ostream &out,const BigInt &a){
-	for (int i = a.digits.size() - 1; i >= 0;i--)
+ostream &operator<<(ostream &out, const BigInt &a) {
+	for (int i = a.digits.size() - 1; i >= 0; i--) {
 		cout << (short)a.digits[i];
+	}
 	return cout;
 }
 
@@ -514,8 +515,8 @@ int main() {
 	if (first == second) {
 		std::cout << "first and second are equal!\n";
 	}
-	else
-		cout << "Not equal!\n";
+	else cout << "Not equal!\n";
+	
 	BigInt third("10000");
 	BigInt fourth("100000");
 	if (third < fourth) {
@@ -576,3 +577,5 @@ int main() {
 
     return 0;
 }
+
+
