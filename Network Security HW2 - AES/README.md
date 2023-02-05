@@ -1,11 +1,12 @@
 # AES
 ## COM 5335 Network Security Assignment #2 - AES
 - Network Security Assignment 2 AES, by NTHU COM 110064533 Paul   
-  - This software demonstrates AES-128, AES-192, and AES-256 basic functionality, contain both Encryption and Decryption process. The implementation follow the NIST official documentation FIPS PUB 197.   
+  - This software demonstrates ```AES-128```, ```AES-192```, and ```AES-256``` basic functionality, contain both Encryption and Decryption process. The implementation follow the NIST official documentation ```FIPS PUB 197```.   
   - Run and tested on ```MATLAB 2015b```   
   - Directly run the ```AES_main.m``` program can see the results below and run the ```show_Sbox.m``` can see the forward substitution table.   
   - main function: ```AES_main.m```   
-  sub functions:  ```key_expansion.m```, ```matrix_mult_AES.m```, ```mult_AES.m```, ```Sbox.m```, ```show_Sbox.m```   
+  sub functions:  ```key_expansion.m```, ```matrix_mult_AES.m```, ```mult_AES.m```, ```Sbox.m```, ```show_Sbox.m```
+  - output result: ((Have fun~ 
   ```
   Round 0 ciphertext is:  165b3b039b14063a155b361b15118205   
   Round 1 ciphertext is:  3b5275116e969474087bf86a1b95e57e   
@@ -36,6 +37,6 @@
   Recovered plaintext is:  6e33547730346b5f3565437572315479   
   AES-128 secret key is:   78686f74ab206d65203e756e6720d67c   
   ```
-Have fun~   
+  
 
 
