@@ -14,7 +14,7 @@ Network Security Assignment 2 AES, by NTHU COM 110064533 Paul
 
 Have fun~   
 
-
+```
 Round 0 ciphertext is:  165b3b039b14063a155b361b15118205   
 Round 1 ciphertext is:  3b5275116e969474087bf86a1b95e57e   
 Round 2 ciphertext is:  eabfc57354c7a3ab1d22d8d44b031246   
@@ -43,7 +43,7 @@ Original plaintext is:   6e33547730346b5f3565437572315479
 Encrypted ciphertext is: 68464bfd42ecf565f81b487b4d999ef8   
 Recovered plaintext is:  6e33547730346b5f3565437572315479   
 AES-128 secret key is:   78686f74ab206d65203e756e6720d67c   
-
+```
 
 
 
